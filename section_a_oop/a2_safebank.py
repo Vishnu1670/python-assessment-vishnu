@@ -6,6 +6,7 @@ class BankAccount:
         #used the balance as a privet variable
         self.__balance = initial_deposit
 
+        # raise Manually create an error to show to the user
         if initial_deposit < 500:
             raise ValueError("Initial deposit must be at least 500")
         
@@ -38,6 +39,8 @@ class BankAccount:
 
     def print_statement(self):
         print(f"Account Holder: {self.account_holder}")
+
+        #enumerate() Get both index number and value while looping.
         for index, transaction in enumerate(self.transactions, start=1):
             print(f"{index}. {transaction}")
 
